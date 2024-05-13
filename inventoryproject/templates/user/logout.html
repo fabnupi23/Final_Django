@@ -1,0 +1,20 @@
+{% extends 'partials/base.html' %}
+{% block title %}Cierre de sesion{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-3 bg-white">
+            <h4>Cierre de Sesion</h4>
+            <hr>
+            <div class="alert alert-info">
+                <h5>Cerraste sesion</h5>
+            </div>
+            <a href="{% url 'user-login' %}">Inicio de Sesion</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

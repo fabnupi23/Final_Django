@@ -1,0 +1,38 @@
+{%extends 'partials/base.html'%}
+
+{% block title %}Personal{% endblock %}
+
+{%block content%}
+{%include 'partials/topnav.html'%}
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <table class="table bg-white">
+                <thead class=""style="background-color: #0252A6;">
+                    <tr class="text-white">
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {%for worker in workers%}
+                    <tr>
+                        <th scope="row"><a class="btn  btn-sm text-white" href="{%url 'dashboard-staff-detail' worker.id %}"style="background-color: #0252A6;">View</a></th>
+                        <td>{{worker.username}}</td>
+                        <td>{{worker.email}}</td>
+                        <td>+57 {{worker.profile.phone}}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{%endblock%}

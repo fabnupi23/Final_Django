@@ -1,0 +1,48 @@
+{%extends 'partials/base.html'%}
+{% block title %}UDES{% endblock %}
+
+{%block content%}
+{%include 'partials/topnav.html'%}
+<!--Table-->
+<div class="container">
+    <div class="row my-4">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <table class="table bg-white">
+                <thead class=""style="background-color: #0252A6;">
+                    <tr class="text-white">
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Ordenes</th>
+                        <th scope="col">Solicitado Por</th>
+                        <th scope="col">Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for orders in orders %}
+                    <tr>
+                        <td>{{orders.product}}</td>
+                        <td>{{orders.product.category}}</td>
+                        <td>{{orders.order_quantity}}</td>
+                        <td>
+                            {{orders.staff.username}}
+                        </td>
+                        <td>
+                            {{orders.date|date:"d-m-y"}}
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--End Table-->
+{% endblock %}
